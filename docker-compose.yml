@@ -1,0 +1,22 @@
+# Bilibili 评论实验室 — 部署编排
+# 用法: cp .env.example .env  # 填 LLM_* 与（可选）BILIBILI_COOKIE
+#       docker compose up -d --build
+services:
+  web:
+    build: .
+    image: bilicom-web:latest
+    container_name: bilicom-web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8765:8765"     # 公网请挂在反代（Caddy/Nginx + TLS + Basic Auth）后面
+    env_file:
+      - .env                       # LLM_BASE_URL / LLM_API_KEY / LLM_MODEL / BILIBILI_COOKIE（可选）
+    volumes:
+      - ./data:/app/data           # raw/normalized/agent/reports/lab.db 全在这
+                                   # 容器以 uid 10001 运行：首次先 sudo chown -R 10001:10001 ./data
+    # 2 GB 小机预算：精炼聚类内存尖峰 ~200MB，限额留余量
+    mem_limit: 400m
+    cpus: 0.8
+    logging:
+      driver: json-file
+      options: { max-size: "5m", max-file: "2" }

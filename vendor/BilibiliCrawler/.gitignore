@@ -1,0 +1,75 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# ===== Virtual environments =====
+venv/
+.venv/
+.venv-agent/
+env/
+.env/
+
+# ===== Environment & config =====
+.env
+.env.*
+user_config.json
+user_data/
+.bilibili_comments_crawler/
+CODE_REVIEW.md
+
+# ===== Logs =====
+*.log
+logs/
+.runlogs/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===== AI tools =====
+.agents/
+.claude/
+.claude-code-history/
+.codex-history/
+.cursor/
+.copilot/
+.roo/
+AGENT_HANDOFF.md
+CODE_REVIEW_FINDINGS.md
+
+# ===== Export artifacts =====
+*.csv
+*.xlsx
+desktop/*-smoke.png
+desktop/analysis-ui-*.png
+
+# ===== Tauri / frontend =====
+desktop/node_modules/
+desktop/dist/
+desktop/.vite/
+desktop/src-tauri/target/
+desktop/src-tauri/resources/backend/
+desktop/src-tauri/gen/
+*.tsbuildinfo
+.install-test/
+analysis-assets/
+analysis-runs/

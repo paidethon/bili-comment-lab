@@ -1,0 +1,10 @@
+# Runtime data and secrets — never commit
+.env
+data/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.webui-auth
+*.zip
+.DS_Store

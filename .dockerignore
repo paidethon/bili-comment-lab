@@ -1,0 +1,14 @@
+# ---- local data / secrets: never ship or commit these ----
+data/
+.env
+.webui-auth
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+regen_video.py
+*.zip
+
+# ---- docs that reference the private deployment ----
+docs/smoke-test-412.md
+BILI_EXISTING_STATE.md

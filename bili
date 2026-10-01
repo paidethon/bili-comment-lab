@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# bili — Bilibili comment extraction / AI analysis toolchain
+# Usage: ./bili crawl|prepare|analyze|all ...
+exec "$(dirname "$0")/venv/bin/python" "$(dirname "$0")/bilicom/cli.py" "$@"
