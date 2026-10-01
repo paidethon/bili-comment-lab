@@ -14,7 +14,7 @@ def test_full_pipeline_offline(lab_root):
     env_patcher = None
     proc = subprocess.run(
         [
-            str(LAB / "venv" / "bin" / "python"),
+            sys.executable,           # 当前解释器，任何环境可用
             str(LAB / "bilicom" / "cli.py"),
             "prepare",
             VIDEO,
